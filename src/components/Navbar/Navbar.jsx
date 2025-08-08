@@ -4,10 +4,13 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+    console.log("Menu toggled:", !isOpen); // Untuk debug
+  };
 
   return (
-    <header className="absolute w-full z-50 transition-all duration-300">
+    <header className="fixed w-full z-50 transition-all duration-300 backdrop-blur-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between md:justify-around">
         {/* Logo */}
         <motion.div
@@ -22,31 +25,36 @@ const Header = () => {
           }}
           className="flex items-center"
         >
-          <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
+          <a
+            href="/"
+            className="text-xl font-bold bg-gradient-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent"
+          >
             ranz
           </a>
         </motion.div>
 
         {/* Desktop Navigation */}
         <nav className="md:flex hidden space-x-8">
-          {["Home", "About", "Projects", "Contact"].map((item, index) => (
-            <motion.a
-              key={item}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                delay: 0.7 + index * 0.2,
-              }}
-              className="relative text-gray-800 hover:blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 group"
-              href={`#${item.toLowerCase()}`}
-            >
-              {item}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-            </motion.a>
-          ))}
+          {["Home", "About", "Skills", "Projects", "Contact"].map(
+            (item, index) => (
+              <motion.a
+                key={item}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 0.7 + index * 0.2,
+                }}
+                className="relative text-gray-800 hover:blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 group"
+                href={`#${item.toLowerCase()}`}
+              >
+                {item}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+            )
+          )}
         </nav>
 
         <motion.div
@@ -82,15 +90,19 @@ const Header = () => {
         transition={{
           duration: 0.4,
         }}
-        className="md:hidden overflow-hidden bg-white shadow-lg px-5 py-6 space-y-5"
+        onClick={() => {
+          setTimeout(() => {
+            toggleMenu
+          }, 100);
+        }}
+        className="md:hidden overflow-hidden bg-white/90 shadow-lg px-5 space-y-5"
       >
         <nav className="flex flex-col space-y-3">
-          {["Home", "About", "Projects", "Contact"].map((item) => (
+          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
             <a
               className="text-gray-800 font-medium py-2"
-              onClick={toggleMenu}
               key={item}
-              href="#"
+              href={`#${item.toLowerCase()}`}
             >
               {item}
             </a>
