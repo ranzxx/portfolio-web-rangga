@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Berbagi Literasi",
-    src: "/img/projects/afispala.png",
+    src: "",
     href: "https://berbagiliterasi.com",
     status: "offline",
     tech: ["Laravel", "Tailwind", "Alphine"],
@@ -9,7 +9,7 @@ const projects = [
   },
   {
     title: "IELP",
-    src: "/img/projects/afispala.png",
+    src: "",
     href: "https://example.com",
     status: "offline",
     tech: ["Laravel", "FilamentPHP", "Tailwindcss"],

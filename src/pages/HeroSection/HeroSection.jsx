@@ -40,9 +40,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ type: "spring", delay: 1.4 }}
-            >
-              
-            </motion.span>
+            ></motion.span>
           </div>
           <motion.p
             initial={{ opacity: 0, y: -50 }}
@@ -55,9 +53,9 @@ const HeroSection = () => {
             }}
             className="max-w-3xl mx-auto"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            recusandae distinctio necessitatibus aspernatur deleniti doloremque
-            nulla, perferendis asperiores eum
+            Menciptakan solusi digital yang mengutamakan pengalaman pengguna
+            dengan menggabungkan kreativitas desain dan keahlian teknis
+            programming
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: -50 }}

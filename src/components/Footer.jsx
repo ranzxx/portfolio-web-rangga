@@ -13,7 +13,10 @@ const Footer = () => {
             >
               ranz
             </a>
-            <p className="text-gray-400">Thanks for visiting! <br /> And we can create something great together.</p>
+            <p className="text-gray-400">
+              Thanks for visiting! <br /> And we can create something great
+              together.
+            </p>
           </div>
           <div>
             <div className="flex gap-10">
@@ -35,14 +38,14 @@ const Footer = () => {
             <h4 className="font-semibold text-xl mb-4 text-white">Follow Me</h4>
             <div className="flex items-center space-x-3">
               <a
-                href="https://www.instagram.com/afispala.smafista?utm_source=ig_web_button_share_sheet&igsh=MW5vYW0wN2Z0ajlndg=="
+                href="https://www.instagram.com/ranze921/"
                 target="_blank"
                 className="w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-blue-500 hover:bg-blue-500 active:bg-blue-500 active:border-blue-500 hover:text-white transition-all duration-200"
               >
                 <FaInstagram className="size-6" />
               </a>
               <a
-                href="https://www.tiktok.com/@afispala?is_from_webapp=1&sender_device=pc"
+                href="https://www.tiktok.com/@usrname__0?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 className="w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-blue-500 hover:bg-blue-500 active:bg-blue-500 active:border-blue-500 hover:text-white transition-all duration-200"
               >
@@ -51,7 +54,7 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold text-xl mt-8 mb-4 text-white">
-                Contact Person
+                Contact Me
               </h4>
               <div className="flex items-center space-x-3 mb-4">
                 <span

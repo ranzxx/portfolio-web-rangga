@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="fixed w-full z-50 transition-all duration-300 backdrop-blur-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between md:justify-around">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-15 flex items-center justify-between md:justify-around">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}

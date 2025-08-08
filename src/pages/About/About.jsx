@@ -62,7 +62,7 @@ const About = () => {
     //     </div>
     //   </motion.div>
     // </section>
-    <section id='about' className="py-20">
+    <section id="about" className="py-20">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -70,24 +70,23 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="container mx-auto px-10 md:px-0"
       >
-        <motion.div
-          variants={titleVariants}
-        >
+        <motion.div variants={titleVariants}>
           <Title title="About Me" />
         </motion.div>
         <div className="flex flex-col-reverse md:flex-row items-center justify-around">
           <motion.div variants={contentVariants} className="max-w-xl">
-            <p className="text-black text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-              itaque quos! Nisi labore iusto voluptates placeat veritatis, nemo
-              sequi similique expedita recusandae assumenda tenetur. Eos minus
-              quaerat ad nemo adipisci quos molestias ducimus, totam pariatur
-              officia aliquam ullam, iusto aut ex repudiandae voluptatibus
-              minima repellendus corrupti voluptatum. Laudantium, error natus!
+            <p className="text-gray-900 text-lg">
+              Perjalanan saya di dunia digital dimulai dari rasa penasaran
+              sederhana: bagaimana sebuah website bisa bekerja? Dari situ, saya
+              mulai belajar membuat halaman web sederhana, lalu perlahan
+              memahami logika di baliknya. Seiring waktu, apa yang dimulai
+              sebagai hobi akan berubah menjadi tertarik. <br /> <br /> Sampai kini, saya tetap mempertahankan rasa penasaran itu.
+              Saya percaya bahwa teknologi terbaik adalah hal yang bisa memecahkan
+              masalah nyata dan membuat hidup orang lebih mudah.
             </p>
           </motion.div>
           <motion.div variants={contentVariants} className="mb-10 md:mb-0">
-            <img src="/vite.svg" alt="" width={250} />
+            <img src="/" alt="rangga" width={250} />
           </motion.div>
         </div>
       </motion.div>

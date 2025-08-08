@@ -65,13 +65,13 @@ const Projects = () => {
             <motion.div
               variants={contentVariants}
               key={index}
-              className="col-span-1 border rounded-lg flex flex-col h-full"
+              className="col-span-1 border rounded-lg flex flex-col h-full shadow-xl"
             >
               <div>
                 <img
-                  src={item.src}
+                  src={item.src || null}
                   alt={item.title.toLowerCase()}
-                  className="rounded-t-lg w-full"
+                  className="rounded-t-lg w-full h-50 object-cover"
                 />
               </div>
               <div className="p-3 space-y-4 flex flex-col flex-grow">
@@ -165,7 +165,11 @@ const Projects = () => {
                 </div>
               )}
               <a
-                href={selectedProject.status === 'offline' ? null : selectedProject.href}
+                href={
+                  selectedProject.status === "offline"
+                    ? null
+                    : selectedProject.href
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center px-4 py-2 rounded-full transition-colors ${
