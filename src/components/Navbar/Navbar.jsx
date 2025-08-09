@@ -182,7 +182,6 @@ const Header = () => {
                       variants={itemVariants} // ✅ Tambah variants untuk setiap item
                       className="text-gray-800 font-medium py-2 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-200"
                       href={`#${item.toLowerCase()}`}
-                      onClick={toggleMenu}
                       whileHover={{ x: 4 }} // ✅ Bonus hover effect
                       whileTap={{ scale: 0.98 }}
                     >

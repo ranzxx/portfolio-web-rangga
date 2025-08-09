@@ -1,7 +1,7 @@
 import Title from "../../components/ui/Title/Title";
 import projects from "../../constants/projects";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
 import { CiShare1 } from "react-icons/ci";
 
@@ -105,85 +105,93 @@ const Projects = () => {
       </motion.div>
 
       {/* see detail modal */}
-      {detailModalOpen && selectedProject && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{
-            duration: 0.3,
-          }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={closeModalDetail}
-        >
-          <div
-            className="bg-white rounded-xl shadow-xl w-full max-w-lg p-6"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {detailModalOpen && selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.3,
+            }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeModalDetail}
           >
-            <div className="flex justify-between items-center mb-4">
-              <h1 className="text-2xl font-bold text-gray-800">
-                {selectedProject.title}
-              </h1>
-              <button onClick={closeModalDetail}>
-                <FiX className="w-5 h-5 text-gray-800 cursor-pointer" />
-              </button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, scale: 0.7 }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="bg-white rounded-xl shadow-xl w-full max-w-lg p-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold text-gray-800">
+                  {selectedProject.title}
+                </h1>
+                <button onClick={closeModalDetail}>
+                  <FiX className="w-5 h-5 text-gray-800 cursor-pointer" />
+                </button>
+              </div>
 
-            <div className="space-y-4">
-              <img
-                src={selectedProject.src}
-                alt={selectedProject.title.toLowerCase()}
-                className="w-full rounded-lg"
-              />
-              <div>
-                <span
-                  className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+              <div className="space-y-4">
+                <img
+                  src={selectedProject.src}
+                  alt={selectedProject.title.toLowerCase()}
+                  className="w-full rounded-lg"
+                />
+                <div>
+                  <span
+                    className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                      selectedProject.status === "offline"
+                        ? "bg-red-100 text-red-800"
+                        : "bg-green-100 text-green-800"
+                    }`}
+                  >
+                    {selectedProject.status}
+                  </span>
+                </div>
+                <p className="text-gray-700">
+                  {selectedProject.description ?? "Tidak ada deskripsi"}
+                </p>
+                {selectedProject.tech && (
+                  <div>
+                    <h3 className="font-semibold mb-2">Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tech.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="bg-gray-200 px-2 py-1 rounded text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <a
+                  href={
                     selectedProject.status === "offline"
-                      ? "bg-red-100 text-red-800"
-                      : "bg-green-100 text-green-800"
+                      ? null
+                      : selectedProject.href
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center px-4 py-2 rounded-full transition-colors ${
+                    selectedProject.status === "offline"
+                      ? "bg-gray-100 border border-gray-400 hover:bg-gray-200 cursor-not-allowed"
+                      : "bg-blue-500 hover:bg-blue-600 text-white"
                   }`}
                 >
-                  {selectedProject.status}
-                </span>
+                  Visit Project <CiShare1 className="ml-2 size-4" />
+                </a>
               </div>
-              <p className="text-gray-700">
-                {selectedProject.description ?? "Tidak ada deskripsi"}
-              </p>
-              {selectedProject.tech && (
-                <div>
-                  <h3 className="font-semibold mb-2">Technologies:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tech.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-200 px-2 py-1 rounded text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              <a
-                href={
-                  selectedProject.status === "offline"
-                    ? null
-                    : selectedProject.href
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center px-4 py-2 rounded-full transition-colors ${
-                  selectedProject.status === "offline"
-                    ? "bg-gray-100 border border-gray-400 hover:bg-gray-200 cursor-not-allowed"
-                    : "bg-blue-500 hover:bg-blue-600 text-white"
-                }`}
-              >
-                Visit Project <CiShare1 className="ml-2 size-4" />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
