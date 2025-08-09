@@ -88,7 +88,7 @@ const Header = () => {
   return (
     <nav className="fixed z-50 w-full backdrop-blur-sm">
       <div className="container mx-auto py-3 px-10">
-        <div className="flex justify-between items-center md:justify-around mb-3">
+        <div className="flex justify-between items-center md:justify-around">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -164,33 +164,41 @@ const Header = () => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && ( // ✅ Conditional rendering dengan &&
-            <motion.div
-              variants={menuVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className="overflow-hidden backdrop-blur-sm shadow-lg border-t" // ✅ Hapus conditional classes
-            >
-              <motion.nav
-                variants={containerVariants}
-                className="space-y-1 pt-5 flex flex-col"
+            <>
+              <hr className="my-3" />
+              <motion.div
+                variants={menuVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="backdrop-blur-sm" // ✅ Hapus conditional classes
               >
-                {["Home", "About", "Skills", "Projects", "Contact"].map(
-                  (item) => (
-                    <motion.a
-                      key={item}
-                      variants={itemVariants} // ✅ Tambah variants untuk setiap item
-                      className="text-gray-800 font-medium py-2 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-200"
-                      href={`#${item.toLowerCase()}`}
-                      whileHover={{ x: 4 }} // ✅ Bonus hover effect
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      {item}
-                    </motion.a>
-                  )
-                )}
-              </motion.nav>
-            </motion.div>
+                <motion.nav
+                  variants={containerVariants}
+                  className="space-y-1 flex flex-col"
+                >
+                  {["Home", "About", "Skills", "Projects", "Contact"].map(
+                    (item) => (
+                      <motion.a
+                        key={item}
+                        variants={itemVariants} // ✅ Tambah variants untuk setiap item
+                        className="text-gray-800 font-medium py-2 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-200"
+                        href={`#${item.toLowerCase()}`}
+                        whileHover={{ x: 4 }} // ✅ Bonus hover effect
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => {
+                          setTimeout(() => {
+                            toggleMenu();
+                          }, 1000)
+                        }}
+                      >
+                        {item}
+                      </motion.a>
+                    )
+                  )}
+                </motion.nav>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
