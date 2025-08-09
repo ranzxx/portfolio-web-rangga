@@ -71,7 +71,7 @@ const Projects = () => {
                 <img
                   src={item.src || null}
                   alt={item.title.toLowerCase()}
-                  className="rounded-t-lg w-full h-50 object-cover"
+                  className="rounded-t-lg w-full object-cover"
                 />
               </div>
               <div className="p-3 space-y-4 flex flex-col flex-grow">
@@ -111,7 +111,7 @@ const Projects = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{
-            duration: 0.8,
+            duration: 0.3,
           }}
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={closeModalDetail}

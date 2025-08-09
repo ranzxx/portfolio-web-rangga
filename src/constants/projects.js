@@ -19,7 +19,7 @@ const projects = [
     title: "Afispala",
     src: "/img/projects/afispala.png",
     href: "https://afispala.vercel.app",
-    tech: ["React", "Tailwindcss", "Motion"],
+    tech: ["React", "Tailwindcss", "ReactBits"],
     status: "online",
   },
 ];
