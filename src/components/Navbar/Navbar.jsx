@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -6,10 +6,89 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
+  const menuVariants = {
+    initial: {
+      height: 0,
+      opacity: 0,
+      y: -10,
+    },
+    animate: {
+      height: "auto",
+      opacity: 1,
+      y: 0,
+      transition: {
+        height: {
+          duration: 0.3,
+          ease: [0.04, 0.62, 0.23, 0.98], // Custom easing
+        },
+        opacity: {
+          duration: 0.25,
+          delay: 0.1,
+        },
+        y: {
+          duration: 0.3,
+          ease: "easeOut",
+        },
+      },
+    },
+    exit: {
+      height: 0,
+      opacity: 0,
+      y: -10,
+      transition: {
+        height: {
+          duration: 0.25,
+          ease: "easeIn",
+          delay: 0.1,
+        },
+        opacity: {
+          duration: 0.2,
+        },
+        y: {
+          duration: 0.2,
+        },
+      },
+    },
+  };
+
+  const itemVariants = {
+    initial: { x: -20, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    exit: {
+      x: -20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
+  const containerVariants = {
+    animate: {
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+      },
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.03,
+        staggerDirection: -1,
+      },
+    },
+  };
+
   return (
     <nav className="fixed z-50 w-full backdrop-blur-sm">
-      <div className="container mx-auto py-3 px-5">
-        <div className="flex justify-between items-center md:justify-around">
+      <div className="container mx-auto py-3 px-10">
+        <div className="flex justify-between items-center md:justify-around mb-3">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -83,25 +162,38 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "40vh" : 0 }}
-          transition={{
-            duration: 0.3,
-          }}
-          className={`space-y-1 pt-5 ${!isOpen ? "hidden" : "flex flex-col"}`}
-        >
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-            <a
-              className="text-gray-800 font-medium py-2"
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={toggleMenu}
+        <AnimatePresence>
+          {isOpen && ( // ✅ Conditional rendering dengan &&
+            <motion.div
+              variants={menuVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="overflow-hidden backdrop-blur-sm shadow-lg border-t" // ✅ Hapus conditional classes
             >
-              {item}
-            </a>
-          ))}
-        </motion.div>
+              <motion.nav
+                variants={containerVariants}
+                className="space-y-1 pt-5 flex flex-col"
+              >
+                {["Home", "About", "Skills", "Projects", "Contact"].map(
+                  (item) => (
+                    <motion.a
+                      key={item}
+                      variants={itemVariants} // ✅ Tambah variants untuk setiap item
+                      className="text-gray-800 font-medium py-2 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-200"
+                      href={`#${item.toLowerCase()}`}
+                      onClick={toggleMenu}
+                      whileHover={{ x: 4 }} // ✅ Bonus hover effect
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {item}
+                    </motion.a>
+                  )
+                )}
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
     // <header className="fixed w-full z-50 transition-all duration-300 backdrop-blur-sm">
