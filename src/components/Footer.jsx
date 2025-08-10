@@ -52,23 +52,6 @@ const Footer = () => {
                 <FaTiktok className="size-5" />
               </a>
             </div>
-            <div>
-              <h4 className="font-semibold text-xl mt-8 mb-4 text-white">
-                Contact Me
-              </h4>
-              <div className="flex items-center space-x-3 mb-4">
-                <span
-                  href="https://wa.me/85775756397"
-                  target="_blank"
-                  className="text-white"
-                >
-                  <IoPersonOutline className="size-6" />
-                </span>
-                <p className="text-white">
-                  +62 857-7575-6397 <span className="text-sm">/ Rangga</span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
