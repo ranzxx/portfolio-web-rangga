@@ -5,7 +5,7 @@ const projects = [
     href: "https://berbagiliterasi.com",
     status: "offline",
     tech: ["Laravel", "Tailwind", "Alphine"],
-    description: `Berbagi Literasi adalah sebuah website yang menyiapkan dan menyebarkan buku-buku gratis untuk anak-anak Indonesia. Website ini dibuat untuk membantu anak-anak Indonesia memiliki akses ke buku-buku yang berkualitas dan menarik.`,
+    description: [`Berbagi Literasi adalah sebuah website yang menyiapkan dan menyebarkan buku-buku gratis untuk anak-anak Indonesia. Website ini dibuat untuk membantu anak-anak Indonesia memiliki akses ke buku-buku yang berkualitas dan menarik.`],
   },
   {
     title: "IELP",
