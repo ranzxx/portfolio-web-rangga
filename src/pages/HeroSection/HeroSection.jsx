@@ -101,19 +101,19 @@ const HeroSection = () => {
             <motion.span variants={wordVariants}>I'm</motion.span>
             <motion.span variants={wordVariants}>Rangga</motion.span>
           </motion.div>
-          <motion.p variants={contentVariants} className="max-w-3xl mx-auto">
+          <motion.p variants={contentVariants} className="max-w-3xl text-base text-gray-800 mx-auto">
             Menciptakan solusi digital yang mengutamakan pengalaman pengguna
             dengan menggabungkan kreativitas desain dan keahlian teknis
             programming
           </motion.p>
-          <motion.div variants={contentVariants}>
+          {/* <motion.div variants={contentVariants}>
             <a
               href="#about"
               className="border border-blue-400 active:bg-blue-500 py-2.5 px-10 rounded-full font-medium hover:shadow-lg transition-all hover:bg-blue-500 active:text-white hover:border-blue-500 hover:text-white duration-300 hover:scale-105 inline-block"
             >
               About Me
             </a>
-          </motion.div>
+          </motion.div> */}
 
           {/* Tech stacks */}
           <motion.div variants={contentVariants}>

@@ -153,9 +153,9 @@ const Projects = () => {
                     {selectedProject.status}
                   </span>
                 </div>
-                <p className="text-gray-700">
-                  {selectedProject.description ?? "Tidak ada deskripsi"}
-                </p>
+                {selectedProject.description.map((line, index) => (
+                  <p className="text-gray-700 whitespace-pre-line" key={index}>{line}</p>
+                )) ?? "Tidak ada deskripsi"}
                 {selectedProject.tech && (
                   <div>
                     <h3 className="font-semibold mb-2">Technologies:</h3>

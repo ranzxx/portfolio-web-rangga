@@ -9,11 +9,18 @@ const projects = [
   },
   {
     title: "IELP",
-    src: "",
+    src: "/img/projects/ielp.png",
     href: "https://example.com",
     status: "offline",
     tech: ["Laravel", "FilamentPHP", "Tailwindcss"],
-    description: `IELP adalah sebuah platform pendaftaran online untuk ICAO English Language Proficiency Test — tes kemampuan bahasa Inggris yang ditujukan untuk personel penerbangan seperti pilot dan ATC (Air Traffic Controller).`,
+    description: [
+      `IELP adalah sebuah platform pendaftaran online untuk ICAO English Language Proficiency Test — tes kemampuan bahasa Inggris yang ditujukan untuk personel penerbangan seperti pilot dan ATC (Air Traffic Controller).`,
+      `🎯 Tujuan platform ini adalah mempermudah proses:
+      ✅ Pendaftaran peserta secara online
+      ✅ Penjadwalan waktu tes
+      ✅ Manajemen data peserta dan riwayat ujian
+      ✅ Komunikasi hasil kepada peserta dan admin`,
+    ],
   },
   {
     title: "Afispala",
