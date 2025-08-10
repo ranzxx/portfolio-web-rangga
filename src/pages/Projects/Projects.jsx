@@ -124,7 +124,7 @@ const Projects = () => {
               transition={{
                 duration: 0.3,
               }}
-              className="bg-white rounded-xl shadow-xl w-full max-w-lg p-6"
+              className="bg-white rounded-xl shadow-xl w-full max-w-lg p-6 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-4">
@@ -153,9 +153,9 @@ const Projects = () => {
                     {selectedProject.status}
                   </span>
                 </div>
-                {selectedProject.description.map((line, index) => (
+                {selectedProject.description ? selectedProject.description.map((line, index) => (
                   <p className="text-gray-700 whitespace-pre-line" key={index}>{line}</p>
-                )) ?? "Tidak ada deskripsi"}
+                )) : "Tidak ada deskripsi"}
                 {selectedProject.tech && (
                   <div>
                     <h3 className="font-semibold mb-2">Technologies:</h3>
