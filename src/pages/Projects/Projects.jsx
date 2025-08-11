@@ -90,7 +90,7 @@ const Projects = () => {
                 <p className="text-sm line-clamp-3">
                   {item.description ?? "Tidak ada deskripsi"}
                 </p>
-                <div className="mb-3 mt-auto">
+                <div className="mt-auto">
                   <button
                     className="py-2 px-6 inline-block rounded-full text-white font-medium duration-200 bg-blue-500 hover:scale-105 hover:shadow-md transition-transform cursor-pointer"
                     onClick={() => openModalDetail(item)}

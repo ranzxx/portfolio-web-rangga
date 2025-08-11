@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const techStack = [
-    { src: '/img/reactjs.png', alt: 'React' },
-    { src: '/img/tailwind.png', alt: 'Tailwind' },
-    { src: '/img/motion.png', alt: 'Motion' },
+    { src: '/img/skills/reactjs.png', alt: 'React' },
+    { src: '/img/skills/tailwind.png', alt: 'Tailwind' },
+    { src: '/img/skills/motion.png', alt: 'Motion' },
   ]
 
   const heroVariants = {
@@ -106,14 +106,6 @@ const HeroSection = () => {
             dengan menggabungkan kreativitas desain dan keahlian teknis
             programming
           </motion.p>
-          {/* <motion.div variants={contentVariants}>
-            <a
-              href="#about"
-              className="border border-blue-400 active:bg-blue-500 py-2.5 px-10 rounded-full font-medium hover:shadow-lg transition-all hover:bg-blue-500 active:text-white hover:border-blue-500 hover:text-white duration-300 hover:scale-105 inline-block"
-            >
-              About Me
-            </a>
-          </motion.div> */}
 
           {/* Tech stacks */}
           <motion.div variants={contentVariants}>

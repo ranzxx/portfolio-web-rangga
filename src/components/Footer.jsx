@@ -1,5 +1,5 @@
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
-import { IoPersonOutline } from "react-icons/io5";
+import { FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa6";
+import { Social } from "../constants";
 
 const Footer = () => {
   return (
@@ -37,19 +37,43 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-xl mb-4 text-white">Follow Me</h4>
             <div className="flex items-center space-x-3">
+              {/* {Social.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.url}
+                  target="_blank"
+                  className="filter flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.name.toLowerCase()}
+                    className="size-9 rounded-lg bg-white object-cover"
+                  />
+                </a>
+              ))} */}
               <a
                 href="https://www.instagram.com/ranze921/"
                 target="_blank"
-                className="w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-blue-500 hover:bg-blue-500 active:bg-blue-500 active:border-blue-500 hover:text-white transition-all duration-200"
+                rel="noopener noreferrer"
+                className="group w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-pink-500 hover:from-purple-600 hover:via-pink-500 hover:to-yellow-400 bg-gradient-to-br active:from-purple-600 active:via-pink-500 active:to-yellow-400 active:border-pink-500 hover:text-white transition-colors duration-300"
               >
                 <FaInstagram className="size-6" />
               </a>
               <a
                 href="https://www.tiktok.com/@usrname__0?is_from_webapp=1&sender_device=pc"
                 target="_blank"
-                className="w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-blue-500 hover:bg-blue-500 active:bg-blue-500 active:border-blue-500 hover:text-white transition-all duration-200"
+                rel="noopener noreferrer"
+                className="group w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-black hover:bg-black active:bg-black active:border-black hover:text-white transition-all duration-300"
               >
-                <FaTiktok className="size-5" />
+                <FaTiktok className="size-6" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@usrname__0?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-white hover:bg-white active:bg-white active:border-white hover:text-white transition-all duration-300"
+              >
+                <FaLinkedin className="size-6 group-hover:fill-blue-500" />
               </a>
             </div>
           </div>
@@ -60,6 +84,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
