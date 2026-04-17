@@ -1,5 +1,4 @@
 import { FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa6";
-import { Social } from "../constants";
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
                       <li key={item}>
                         <a href={`#${item.toLowerCase()}`}>{item}</a>
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               </div>
@@ -37,20 +36,6 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-xl mb-4 text-white">Follow Me</h4>
             <div className="flex items-center space-x-3">
-              {/* {Social.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.url}
-                  target="_blank"
-                  className="filter flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.name.toLowerCase()}
-                    className="size-9 rounded-lg bg-white object-cover"
-                  />
-                </a>
-              ))} */}
               <a
                 href="https://www.instagram.com/ranze921/"
                 target="_blank"
@@ -68,7 +53,7 @@ const Footer = () => {
                 <FaTiktok className="size-6" />
               </a>
               <a
-                href="https://www.tiktok.com/@usrname__0?is_from_webapp=1&sender_device=pc"
+                href="https://www.linkedin.com/in/rangga-nafie-b736b7379"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-white hover:bg-white active:bg-white active:border-white hover:text-white transition-all duration-300"

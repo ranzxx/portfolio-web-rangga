@@ -8,11 +8,10 @@ const skills = [
   { title: "PHP", src: "/img/skills/php.png", alt: "PHP" },
   { title: "Laravel", src: "/img/skills/laravel.png", alt: "Laravel" },
   { title: "Mysql", src: "/img/skills/mysql.png", alt: "Mysql" },
-  { title: "Vite", src: "/img/skills/vite.png", alt: "Vite" },
-  { title: "Github", src: "/img/skills/github.png", alt: "Github" },
   { title: "Vercel", src: "/img/skills/vercel.png", alt: "Vercel" },
-  { title: "Motion", src: "/img/skills/motion.png", alt: "Motion" },
   { title: "Git", src: "/img/skills/git_logo.png", alt: "Git" },
+  { title: "Github", src: "/img/skills/github.png", alt: "Github" },
+  { title: "Motion", src: "/img/skills/motion.png", alt: "Motion" },
 ];
 
 export default skills;
