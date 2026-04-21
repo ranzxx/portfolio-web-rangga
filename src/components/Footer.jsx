@@ -45,14 +45,6 @@ const Footer = () => {
                 <FaInstagram className="size-6" />
               </a>
               <a
-                href="https://www.tiktok.com/@usrname__0?is_from_webapp=1&sender_device=pc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-10 h-10 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-black hover:bg-black active:bg-black active:border-black hover:text-white transition-all duration-300"
-              >
-                <FaTiktok className="size-6" />
-              </a>
-              <a
                 href="https://www.linkedin.com/in/rangga-nafie-b736b7379"
                 target="_blank"
                 rel="noopener noreferrer"
