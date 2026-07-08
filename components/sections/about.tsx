@@ -14,14 +14,14 @@ export function About() {
         <div className="space-y-5 text-muted-foreground">
           <p>
             I&apos;m a full-stack developer focused on building SaaS products,
-            AI applications, and developer tools using Next.js, TypeScript,
-            PostgreSQL, and Docker.
+            AI-powered applications, and developer tools using Next.js,
+            TypeScript, PostgreSQL, and Docker.
           </p>
 
           <p>
             My recent work includes an AI chatbot platform with RAG, an
-            embeddable feedback widget SaaS, and a full-stack blog platform with
-            authentication and database-backed content.
+            embeddable feedback widget SaaS, and a full-stack blog platform
+            built with authentication and PostgreSQL.
           </p>
 
           <p>

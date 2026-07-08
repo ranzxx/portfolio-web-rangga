@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Nexus",
     description:
-      "AI chatbot platform with RAG, pgvector semantic search, Cohere embeddings, Groq LLMs, Stripe subscriptions, Docker, and CI/CD.",
+      "AI-powered chatbot platform supporting PDF upload, semantic search with pgvector, Cohere embeddings, Groq LLMs, Stripe subscriptions, Docker, and CI/CD.",
     liveUrl: "https://chatwithnexus.vercel.app",
     githubUrl: "https://github.com/ranzxx/nexus",
     tech: ["Next.js", "TypeScript", "pgvector", "Cohere", "Groq", "Stripe"],
@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Writerly",
     description:
-      "Full-stack blog platform with authentication, comments, CRUD functionality, and PostgreSQL-backed content management.",
+      "Full-stack blog platform with authentication, comments, CRUD functionality, and content management using Next.js and PostgreSQL.",
     liveUrl: "https://writerly-app.vercel.app",
     githubUrl: "https://github.com/ranzxx/writerly",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Better Auth", "Drizzle"],

@@ -8,12 +8,12 @@ export function Hero() {
         <SectionLabel>Full-Stack Engineer</SectionLabel>
 
         <h1 className="text-5xl font-bold tracking-tight text-balance md:text-7xl">
-          Hi, I&apos;m Rangga.
+          Hi, I&apos;m Rangga. 
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-          I build production-grade SaaS and AI applications with Next.js,
-          TypeScript, PostgreSQL, and Docker.
+          I build production-grade SaaS and AI-powered applications using
+          Next.js, TypeScript, PostgreSQL, and Docker.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
